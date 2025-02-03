@@ -1,0 +1,1103 @@
+/* ------------------------------
+   VARIABLES DE COLOR
+--------------------------------*/
+:root {
+  --color-burgundy: #7C0A02;
+  --color-gray: #808080;
+  --color-white: #FFFFFF;
+  --color-dark: #333333;
+}
+
+/* ------------------------------
+ RESETEO BÁSICO
+--------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--color-dark);
+  background-color: var(--color-white);
+  line-height: 1.5;
+}
+
+/* ------------------------------
+ CABECERA / MENÚ
+--------------------------------*/
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: var(--color-white);
+  color: var(--color-burgundy);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  max-height: 50px;
+  margin-right: 1rem;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: var(--color-burgundy);
+}
+
+/* LOGO con enlace al inicio */
+.logo-container a.logo-link {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo-container a.logo-link:hover,
+.logo-container a.logo-link:focus,
+.logo-container a.logo-link:visited,
+.logo-container a.logo-link:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* MENÚ PRINCIPAL */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+nav ul li {
+  margin-left: 1rem;
+}
+
+nav ul li a {
+  color: var(--color-burgundy);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  text-decoration: underline;
+}
+
+/* SUBMENÚ (Dropdown) */
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+.dropdown-content li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-content li a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+  
+  /* ------------------------------
+     BANNER (PÁGINA PRINCIPAL)
+  --------------------------------*/
+  .banner {
+    position: relative;
+    /* Ajusta la ruta e imagen */
+    background: url('../images/oficina-banner.png') center/contain no-repeat;
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-white);
+  }
+  
+  .banner {
+    min-height: 40vh; /* Reducido de 60vh */
+    background-position: center 30%; /* Ajuste de posición de la imagen */
+  }
+  
+  .banner-title {
+    font-size: 2rem; /* Reducido de 3rem */
+    margin-bottom: 0.5rem;
+    padding: 0 1rem; /* Evita que el texto toque los bordes */
+  }
+  
+  .banner-subtitle {
+    font-size: 1rem; /* Reducido de 1.2rem */
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .banner {
+      min-height: 30vh; /* Ajuste para móviles */
+    }
+    
+    .banner-title {
+      font-size: 1.5rem;
+    }
+    
+    .banner-subtitle {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* ------------------------------
+     SECCIONES / CONTENEDORES
+  --------------------------------*/
+  section {
+    padding: 2rem 2rem;
+  }
+  
+  .container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* TITULO SECCIONES CENTRADO */
+  .section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--color-dark);
+    margin-bottom: 1.5rem;
+  }
+  
+  /* TEXTO FINAL CENTRADO */
+  .final-text {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  /* ------------------------------
+     SERVICIOS - TARJETAS
+  --------------------------------*/
+  .services-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .card {
+    width: 300px;
+    background-color: #f9f9f9;
+    border: none; 
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+  }
+  .card a.card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+  .card h3 {
+    background-color: var(--color-burgundy);
+    color: var(--color-white);
+    margin: 0;
+    padding: 0.5rem 0;
+  }
+  .card p {
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: var(--color-dark);
+  }
+  .card a.card-link:hover h3 {
+    text-decoration: underline;
+  }
+  
+  /* ------------------------------
+     NOTICIAS
+  --------------------------------*/
+  .news-section {
+    background-color: #f3f3f3;
+    padding: 2rem 2rem;
+  }
+  .news-section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .news-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+  .news-card {
+    max-width: 300px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 1rem;
+  }
+  .news-card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--color-burgundy);
+  }
+  /* Títulos de noticia sin subrayado */
+  .news-card h3 a {
+    text-decoration: none;
+    color: var(--color-burgundy);
+  }
+  .news-card h3 a:hover,
+  .news-card h3 a:visited,
+  .news-card h3 a:focus,
+  .news-card h3 a:active {
+    text-decoration: none;
+    color: var(--color-burgundy);
+  }
+  
+  /* ------------------------------
+     PÁGINAS DE SERVICIOS
+     (legalizacion-documentos, etc.)
+  --------------------------------*/
+  .service-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .service-section {
+    max-width: 1200px; /* Mantiene el ancho uniforme */
+    margin: 0 auto; /* Centra horizontalmente */
+    padding: 2rem; /* Espaciado interno */
+    background: #f9f9f9; /* Fondo claro */
+    border-radius: 8px; /* Bordes redondeados */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }  
+  .service-section h2 {
+    color: var(--color-burgundy);
+    margin-bottom: 1rem;
+  }
+  .service-section p,
+  .service-section ul {
+    margin-bottom: 1rem;
+  }
+  .service-section ul {
+    list-style: disc;
+    margin-left: 2rem;
+  }
+  
+  /* Layout de columnas, etc. */
+  .two-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+  
+  /* PROCESOS */
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .step {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  /* Requirements */
+  .requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+  .requirement {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  /* FAQ */
+  .faq-item {
+    background: #fff;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  /* CTA */
+  .cta-section {
+    max-width: 1200px; /* Asegura el mismo ancho que las otras secciones */
+    margin: 0 auto; /* Centra la sección */
+    padding: 2rem; /* Añade espacio interno */
+    background-color: #7C0A02; /* Color granate */
+    color: #fff; /* Color de texto blanco */
+    text-align: center; /* Centra el texto */
+    border-radius: 8px; /* Opcional: bordes redondeados */
+  }
+
+  
+  .cta-section .container {
+    max-width: 1200px; /* Ancho fijo para alinear con otras secciones */
+    margin: 0 auto; /* Centrado horizontal */
+    padding: 0 auto; /* Espaciado lateral para pantallas pequeñas */
+  }
+
+  .custom-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #fff;
+    color: #000 !important;
+    border: 2px solid var(--color-burgundy);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+  }
+  .custom-btn:hover {
+    background-color: var(--color-burgundy);
+    color: #fff !important;
+    border-color: var(--color-burgundy);
+  }
+  
+  /* IMAGEN A LA IZQUIERDA + TEXTO A LA DERECHA */
+  .image-left-section .image-text-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+}
+  .image-left-section .image-wrapper {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  /* Forzar altura y recortar */
+  .image-left-section .service-img {
+    width: 100%;
+    height: 300px; /* Ajusta la altura para uniformidad */
+    object-fit: cover; /* Ajusta la imagen dentro del espacio */
+    border-radius: 8px;
+  }
+  
+  /* FOOTER */
+  footer {
+    background-color: #f3f3f3;
+    color: var(--color-dark);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+  footer a {
+    color: var(--color-burgundy);
+    text-decoration: none;
+  }
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* ------------------------------
+     RESPONSIVE
+  --------------------------------*/
+  @media (max-width: 768px) {
+  
+    nav ul {
+      flex-direction: row;  
+      flex-wrap: wrap;      
+      align-items: center;
+      justify-content: flex-start;
+    }
+    nav ul li {
+      margin-left: 1rem;
+      margin-bottom: 0;  
+    }
+  
+    .banner {
+      min-height: 35vh; 
+    }
+    .banner-title {
+      font-size: 1.5rem;
+    }
+    .banner-subtitle {
+      font-size: 0.875rem;
+    }
+  
+    .two-columns,
+    .process-steps,
+    .requirements-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    /* Imagen left -> text right en 1 columna */
+    .image-left-section .image-text-container {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .image-left-section .image-wrapper {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
+  .reviews-section {
+    padding: 2rem;
+    background-color: #f8f8f8; /* Color de fondo opcional */
+    text-align: center;        /* Centra el título */
+  }
+  
+  .reviews-wrapper {
+    display: flex;
+    justify-content: center; /* Centra el iframe */
+    margin-top: 1rem;
+  }
+  
+  /* iFrame responsive (opcional) */
+  .reviews-wrapper iframe {
+    max-width: 100%;
+    height: 450px; /* Ajusta si quieres otra altura */
+  }
+  <!-- Añade este CSS -->
+<style>
+    /* SECCIÓN RESEÑAS Y MAPA */
+    .reviews-section {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .reviews-section h2 {
+        text-align: center;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        color: #333; /* AQUÍ cambia a gris (#333) */
+      }  
+      
+      .estrellas {
+        text-align: center;
+        font-size: 1.5em;
+        color: #eac859;
+        margin-bottom: 20px;
+      }
+      
+    .reviews-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    /* CARRUSEL */
+    .reviews-carousel {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        height: 500px; /* Altura fija para mantener proporción con el mapa */
+    }
+
+    .review-slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .review-slide.active {
+        opacity: 1;
+    }
+
+    .review-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Flechas del carrusel */
+    .carousel-prev,
+    .carousel-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 10px;
+        background: rgba(0,0,0,0.3);
+        border-radius: 50%;
+        z-index: 10;
+    }
+
+    .carousel-prev { left: 10px; }
+    .carousel-next { right: 10px; }
+
+    /* MAPA */
+    .map-container {
+        height: 500px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    @media (max-width: 768px) {
+        .reviews-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .reviews-carousel,
+        .map-container {
+            height: 300px;
+        }
+    }
+</style>
+/* RESEÑAS Y MAPA */
+.reviews-section {
+    padding: 4rem 2rem;
+    background: #f9f9f9;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.reviews-carousel {
+    position: relative;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.review-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.review-slide.active {
+    opacity: 1;
+}
+
+.review-slide img {
+    width: 100%;
+    height: auto;     /* Permite que la imagen crezca en altura según su proporción */
+    object-fit: contain; /* O quita object-fit si prefieres que simplemente se vea entera */
+    border: none;
+  }
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    z-index: 10;
+    transition: background 0.5s;
+}
+
+.carousel-prev { left: 15px; }
+.carousel-next { right: 15px; }
+
+.carousel-prev:hover, .carousel-next:hover {
+    background: rgba(0,0,0,0.6);
+}
+
+.map-container {
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .reviews-carousel, 
+    .map-container {
+        height: 400px;
+    }
+}
+/* Página Quiénes Somos */
+.quienes-somos-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  /* Disposición en dos columnas: texto (izq) + carrusel (dcha) */
+  .qs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 2rem;
+    align-items: center; /* Alineación vertical */
+  }
+  
+  /* Opcional, estilo del texto */
+  .qs-info {
+    /* Si quieres más estilos, agrégalos aquí */
+  }
+  
+  /* Ajustes del carrusel */
+  .carousel-container {
+    position: relative;
+    max-width: 600px;  /* ancho máximo */
+    height: 400px;     /* altura fija; quítalo si no quieres forzar la altura */
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  
+  /* Cada slide oculta por defecto */
+  .carousel-slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Imagenes: no se deformen */
+  .carousel-slide img {
+    width: 100%;
+    height: auto;      /* Mantiene proporción */
+    object-fit: cover; /* O "contain" si prefieres ver la imagen entera */
+  }
+  /* ==============================
+   TRÁFICO Y TRANSPORTES - 2 Columnas
+============================== */
+/* contenedor que agrupa imagen + texto */
+.service-row {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* imagen = 1fr, texto = 1.5fr */
+    gap: 2rem;
+    align-items: start;
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem; /* separa cada bloque */
+  }
+  
+  /* la columna de la imagen */
+  .service-img-wrap img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* o 'contain' si prefieres ver la imagen completa sin recorte */
+    border-radius: 8px;
+  }
+  
+  /* la columna de texto */
+  .service-text h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .service-text p, 
+  .service-text ul {
+    margin-bottom: 1rem;
+  }
+  /* Estilo para herencias y donaciones: imagen izq, texto der */
+.service-row {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; /* Imagen: 1fr, Texto: 1.5fr */
+  gap: 2rem;
+  align-items: start;
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.service-img-wrap img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* o "contain" si no quieres recorte */
+  border-radius: 8px;
+}
+
+.service-text h2,
+.service-text h3 {
+  margin-top: 0; 
+}
+
+.service-text p,
+.service-text ul {
+  margin-bottom: 1rem;
+}
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+  .service-row {
+    grid-template-columns: 1fr; /* pasa a una sola columna en móviles */
+  }
+  .service-img-wrap img {
+    margin-bottom: 1rem; /* Espacio entre imagen y texto */
+  }
+}
+/* Cajas individuales para cada sub-servicio del Registro */
+.service-box {
+  background-color: #f9f9f9; /* color de fondo */
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;  /* Espacio entre las cajas */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08); /* sombra sutil */
+}
+
+.service-box h3 {
+  margin-top: 0; /* Evita hueco extra al principio */
+}
+
+.service-box ul {
+  margin-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-box ul li {
+  margin-bottom: 0.5rem;
+}
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-link:hover {
+  text-decoration: none;
+}
+/* Estilos generales */
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 10px; /* Reducir el padding */
+}
+
+/* Estilos para el contenedor del texto */
+.qs-grid {
+  width: 200%; /* Aumentar el ancho del contenedor */
+  margin: 0 auto;
+}
+
+/* Aumentar tamaño de la fuente del texto */
+.qs-info {
+  font-size: 16px; 
+}
+
+/* Estilos para el carrusel */
+.carousel-container {
+  width: 200%;
+  margin: 50px auto;
+}
+
+.carousel-slide {
+  display: none;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+}
+
+/* ... otros estilos ... */
+/* PÁGINA DE DECLARACIONES DE LA RENTA */
+.service-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.service-box {
+  flex: 1 1 calc(33.333% - 2rem); /* Tres columnas con espacio entre ellas */
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.service-box h3 {
+  color: #7C0A02;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.service-box p {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* RESPONSIVE PARA SERVICIOS */
+@media (max-width: 768px) {
+  .service-box {
+    flex: 1 1 100%; /* Una columna en pantallas pequeñas */
+  }
+}
+.traffic-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.traffic-tab {
+  padding: 0.5rem 1rem;
+  background-color: #7C0A02;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.traffic-tab:hover {
+  background-color: #5A0701;
+}
+.section-title {
+  text-align: center;
+  color: rgb(51, 51, 51);
+  background-color: rgb(249, 249, 249);
+  font-family: sans-serif;
+}
+
+.document-list {
+  text-align: start;
+  color: rgb(51, 51, 51);
+  background-color: rgb(249, 249, 249);
+  font-size: medium;
+  font-family: sans-serif;
+}
+/* MENÚ PRINCIPAL */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+nav ul li {
+  margin-left: 1rem;
+}
+
+nav ul li a {
+  color: var(--color-burgundy);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  text-decoration: underline;
+}
+
+/* SUBMENÚ (Dropdown) */
+
+/* Estilos generales para los submenús */
+nav ul li ul {
+  display: none; /* Ocultar por defecto */
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  padding: 0;
+  margin: 0;
+  list-style: none; /* Quitar viñetas */
+  /* Transición suave para mostrar/ocultar */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Mostrar submenú al pasar por encima del elemento padre */
+nav ul li:hover > ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Estilos de los enlaces dentro de los submenús */
+nav ul li ul li a {
+    padding: 0.5rem 1rem;
+    display: block;
+    color: var(--color-burgundy); /* Usando la variable del color granate */
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Cambio de color en hover */
+nav ul li ul li a:hover {
+  background-color: #ddd;
+  color: var(--color-burgundy); /* Color granate al hacer hover */
+}
+
+/* Posicionamiento de submenús de nivel 2 (Tráfico) */
+nav ul li ul li ul {
+  top: 0;
+  right: 100%; /* Alinear a la izquierda del elemento padre */
+  /* Añadimos un retraso para que no desaparezca inmediatamente */
+  transition-delay: 0.2s;
+}
+
+/* Posicionamiento de submenús de nivel 3 (Vehículos y Conductores) */
+nav ul li ul li ul li ul {
+  top: 0;
+  right: 100%; /* Alinear a la izquierda del elemento padre */
+  /* Añadimos un retraso para que no desaparezca inmediatamente */
+  transition-delay: 0.2s;
+}
+@media (max-width: 768px) {
+  .service-section {
+      max-width: 100%; /* Asegúrate de que ocupe todo el ancho del contenedor */
+      padding: 1rem; /* Reduce el padding interno */
+  }
+
+  .image-left-section .image-text-container {
+      grid-template-columns: 1fr; /* Cambia a una sola columna */
+      gap: 20px; /* Reduce el espacio entre elementos */
+      text-align: center; /* Centra el texto */
+  }
+
+  .cta-section {
+      padding: 1.5rem; /* Ajusta el espacio interno para móviles */
+      max-width: 100%; /* Ocupa todo el ancho disponible */
+      text-align: center; /* Centra el texto */
+  }
+}
+@media (max-width: 768px) {
+  /* Forzar que los submenús se posicionen de forma estática (abajo) */
+  nav ul li ul {
+    position: static;
+    min-width: 100%;
+    box-shadow: none;
+    background-color: #f9f9f9;
+    display: none;  /* Ocultos por defecto */
+  }
+  
+  /* Muestra el submenú cuando se hace focus o hover en el elemento padre */
+  nav ul li:focus-within > ul,
+  nav ul li:hover > ul {
+    display: block;
+  }
+  
+  /* Ajusta el padding de los enlaces de submenú */
+  nav ul li ul li a {
+    padding: 0.5rem 1rem;
+  }
+  
+  /* Opcional: agrega un indicador visual para elementos con submenú */
+  nav ul li.dropdown > a.dropbtn::after {
+    content: " ▼";
+    font-size: 0.8em;
+  }
+  @media (max-width: 768px) {
+    /* Forzamos que los submenús se posicionen de forma estática (vertical) */
+    nav ul li ul {
+      position: static !important;
+      display: none !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      width: 100%;
+      box-shadow: none;
+      background-color: #f9f9f9;
+    }
+    /* Se muestran al hacer clic (o al pasar por encima/focus) */
+    nav ul li:focus-within > ul,
+    nav ul li:hover > ul {
+      display: block !important;
+    }
+    /* Ajusta el padding si lo consideras necesario */
+    nav ul li ul li a {
+      padding: 0.5rem 1rem;
+    }
+    /* Agrega un indicador visual a los elementos con submenú */
+    nav ul li.dropdown > a.dropbtn::after {
+      content: " ▼";
+      font-size: 0.8em;
+    }
+  }  
+  @media (max-width: 768px) {
+    /* Forzar que los submenús se comporten de forma estática y se muestren solo cuando se active la clase "active" */
+    nav ul li.dropdown ul.dropdown-content {
+      position: static !important;
+      display: none;
+      width: 100%;
+      box-shadow: none;
+    }
+    nav ul li.dropdown.active ul.dropdown-content {
+      display: block !important;
+    }
+  }  
+}
+  </style>
+</head>
+<body>
